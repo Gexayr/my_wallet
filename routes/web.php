@@ -14,12 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-
 Route::get('auth/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{service}/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::group(['middleware' => ['verified']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('wallet', 'WalletController')->only([
+        'index', 'store'
+    ]);
+    Route::post('record', 'RecordController@store')->name('record');
+});
+

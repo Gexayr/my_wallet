@@ -49704,6 +49704,16 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$(document).ready(function () {
+  $('.add-record').click(function (e) {
+    var self = $(e.currentTarget);
+    $('#wallet_id').val(self.data('id'));
+  });
+  $('#addRecord').on('hidden.bs.modal', function () {
+    $(this).find('input:not([type="hidden"])').val('');
+    $(this).find('select').val('').trigger('change');
+  });
+});
 
 /***/ }),
 

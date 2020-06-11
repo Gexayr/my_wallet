@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! Now you can <a href="{{route('wallet.index')}} ">Add Wallet</a>
                 </div>
             </div>
         </div>
