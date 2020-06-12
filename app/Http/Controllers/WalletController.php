@@ -21,7 +21,6 @@ class WalletController extends Controller
         $totalBalances[Wallet::CREDIT_CARD] = 0;
         $totalBalances[Wallet::CRYPTO_CURRENCY] = 0;
         foreach ($wallets as $wallet) {
-
             switch ($wallet->type) {
                 case Wallet::CASH:
                     $totalBalances[Wallet::CASH] += $wallet->amount;

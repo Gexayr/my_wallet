@@ -41,10 +41,10 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="/auth/google">G</a>
+                                <a class="nav-link" href="/auth/google"><img src="/img/google_32.png" width="20" alt="Google+"/></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/auth/facebook">F</a>
+                                <a class="nav-link" href="/auth/facebook"><img src="/img/fb_32.png" width="20" alt="Facebook"/></a>
                             </li>
 
                             <li class="nav-item">

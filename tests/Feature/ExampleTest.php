@@ -16,6 +16,18 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertSee('Wallet');
+    }
+
+    public function testHome()
+    {
+        $response = $this->call('POST', '/home');
+        $response->assertStatus(405);
+    }
+
+    public function testWallet()
+    {
+        $response = $this->call('POST', '/wallet');
+        $response->assertStatus(302);
     }
 }
